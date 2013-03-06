@@ -1,0 +1,66 @@
+/*
+ Steven Roseman
+ MIU
+ Term 1303
+ Project 1
+ */
+
+body{
+    background: silver;
+}
+
+ul{
+    visibility: none;
+}
+
+
+h1 {
+    border: 20px / 20px;
+    margin: 1px;
+    border: 1px solid black;
+    padding: 1px;
+    background: #aa7f7f;
+    font: 28px Arial;
+    font-weight: bold;
+    text-align: center;
+    
+    
+    
+    
+}
+
+h2{
+   
+   border: 1px solid black;
+   background: #aa7f7f;
+   padding: 1px;
+   text-align: center;
+   width:300px;
+   font: 14px Arial;
+}
+
+h3{
+    border-radius: 10px 10px;
+    padding: 5px;
+    background: #aa7f7f;
+    width: 150px;
+    font: 14px Futura; 
+}
+
+
+
+
+p {
+    color: white;
+    font: 12px Futura;
+    text-align: right;
+    line-height: 1.2em;
+    
+}
+
+legend{
+    font-weight: bold;
+}
+
+a{text-decoration: underline;}
+a:hover{color:gray;outline:none;}
