@@ -1,12 +1,3 @@
-// Steven A. Roseman II
-// MIU
-// Project 1
-
-// Term 1303
-
-
-
-
 // When Dom content is entered function will load. This event listener makes
 // sure none of the data is run till Dom content is loaded
 window.addEventListener("DOMContentLoaded", function(){
@@ -209,58 +200,9 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
-    function validate(eData) {
-        //Define the elements we want to check
-        var getGroup = getEle("groups");
-        var getFname = getEle("fname");
-        var getLname = getEle("lname");
-        var getEmail = getEle("email");
+    function validate() {
         
-        // Get Error Messages
-        var messageAry = [];
-        //Group Validation
-        if(getGroup.value === "--Choose one Selection--") {
-            var groupError = "Please choose a group";
-            getGroup.style.border = "1px solid red";
-            messageAry.push(groupError);
-        }
-        
-        //First Name Validation
-        if(getFname.value == "") {
-            var fnameError = "Please enter a first name";
-            getFname.style.border = "1px solid red";
-            messageAry.push(fnameError);
-        }
-        
-        //Last Name Validation
-        if(getLname.value === "") {
-            var lnameError = "Please enter a last name";
-            getLname.style.border = "1px solid red";
-            messageAry.push(groupError);
-        }
-        
-        //Email Validation
-        var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if(!(re.exec(getEmail.value))) {
-            var emailError = "Please enter a valid email Address";
-            getEmail.style.border = "1px solid red";
-            messageAry.push(emailError);
-        }
-        
-        //If errors are on the screen, this will display them on the screen
-        if(messageAry.length >= 1) {
-            for(var i=0; j= messageAry.length; i++) {
-                var txt = createEle("li");
-                txt.innerHTML = messageAry[i];
-                errMsg.appendChild(txt);
-            }
-            
-        }
-       eData.preventDefault();
-       return false;
     }
-        
-        
  
     
     
@@ -268,7 +210,6 @@ window.addEventListener("DOMContentLoaded", function(){
     var wedGst = ["--Choose One Selection--", "Family", "Friend", "Attendee"]; // Group 
     var dinnerValue; // Call this var in storeData and getSelectRadio function
     var picValue; // Call this var in storeData and getSelectRadio function
-    var errMsg = getEle("errors");
  
    makeGstList();
   
@@ -278,7 +219,7 @@ window.addEventListener("DOMContentLoaded", function(){
     var clearLink = getEle("clearData");
     clearLink.addEventListener("click", clearLocal);
     var save = getEle("submit")
-    save.addEventListener("click", validate);
+    save.addEventListener("click", storeData);
     
 
     
