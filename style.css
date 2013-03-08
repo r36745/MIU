@@ -5,19 +5,33 @@
  Project 1
  */
 
+ul.style{
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #ceaeae;
+}
+
+ul li{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 15px 15px;
+    background-color: white;
+    text-align: center;
+    
+}
+
 body{
     background: silver;
 }
 
 ul{
     visibility: none;
+    list-style: none;
 }
 
 
 h1 {
-    border: 20px / 20px;
-    margin: 1px;
-    border: 1px solid black;
+    margin: 0px;
     padding: 1px;
     background: #aa7f7f;
     font: 28px Arial;
@@ -30,13 +44,9 @@ h1 {
 }
 
 h2{
-   
-   border: 1px solid black;
-   background: #aa7f7f;
-   padding: 1px;
-   text-align: center;
-   width:300px;
-   font: 14px Arial;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 3px 3px 4px #000;
 }
 
 h3{
@@ -62,5 +72,16 @@ legend{
     font-weight: bold;
 }
 
-a{text-decoration: underline;}
+div {
+    background: white;
+    border-radius: 5px 5px;
+    
+}
+
+section{
+    margin-right: 0px;
+}
+
+
+a{text-decoration: none;}
 a:hover{color:gray;outline:none;}
