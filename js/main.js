@@ -1,3 +1,10 @@
+//Steven Roseman
+//MIU
+//Term 1303
+//Project 1
+
+
+
 // When Dom content is entered function will load. This event listener makes
 // sure none of the data is run till Dom content is loaded
 window.addEventListener("DOMContentLoaded", function(){
@@ -64,8 +71,16 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
-    function storeData() {
+    function storeData(key) {
+        //If there is no key, this means this is a brand new item and we need a new key
+        if(!key) {
         var id                 = Math.floor(Math.random()*100000001);
+        }else{
+            //Set the id to the existing key were editing so that it will save over the data
+            //The key is the same key that's been passed along from the editSubmit event handler
+            //to the validate function and then passed here into the storeData function
+            id = key;  
+        }   
         //Gather all form field values and store in a object
         //Make sure object properties contain an array w/ both the form label and input value
         getSelectedRadio ();
@@ -90,7 +105,8 @@ window.addEventListener("DOMContentLoaded", function(){
     function getData() {
       toggleControls("on");
       if(localStorage.length ===0) {
-        alert("There is no data in LocalStorage")
+        alert("There is no data in LocalStorage so default data was added")
+        autoFillData();
       }
         var makeDiv = createEle("div");
         makeDiv.setAttribute("id", "items");
@@ -107,6 +123,7 @@ window.addEventListener("DOMContentLoaded", function(){
             var obj = JSON.parse(value);
             var makeSubList = createEle("ul");
             makeLi.appendChild(makeSubList);
+            getImage(obj.group[1], makeSubList);
             for(var n in obj) {
                 var makeSubLi = createEle("li");
                 makeSubList.appendChild(makeSubLi);
@@ -118,6 +135,26 @@ window.addEventListener("DOMContentLoaded", function(){
             
         }
         
+    }
+    
+    
+    //Get image for the correct category
+    function getImage(catName, makeSubList) {
+       var imageLi = createEle("li");
+       makeSubList.appendChild(imageLi);
+       var newImg = createEle("img");
+       var setSrc = newImg.setAttribute("src", "images/"+ catName +".png");
+       imageLi.appendChild(newImg);
+    }
+    
+    function autoFillData() {
+        // The actual JSON Object data required for this to wrk is coming from
+        //our json.js file which is loaded from our HTML page
+        //Store the JSON object into Local storage
+        for(var n in json) {
+            var id = Math.floor(Math.random()*100000001);
+            localStorage.setItem(id, JSON.stringify(json[n]));
+        }
     }
     //This function will create the edit and delete links for each stored
     //item when displayed
@@ -140,7 +177,7 @@ window.addEventListener("DOMContentLoaded", function(){
     deleteLink.href = "#";
     deleteLink.key = key;
     var deleteText = "Delete RSVP";
- //   deleteLink.addEventListener("click", deleteItem);
+    deleteLink.addEventListener("click", deleteItem);
     deleteLink.innerHTML = deleteText;
     linksLi.appendChild(deleteLink);
         
@@ -189,6 +226,17 @@ window.addEventListener("DOMContentLoaded", function(){
         
     }
     
+    function deleteItem() {
+        var ask = confirm("Are you sure you want to delete the RSVP");
+            alert("There is no data to clear");
+        if(ask) {
+            localStorage.removeItem(this.key);
+            window.location.reload();
+        }else{
+           alert("RSVP was not deleted"); 
+        }
+    }
+    
     function clearLocal() {
         if(localStorage.length === 0) {
             alert("There is no data to clear");
@@ -201,57 +249,65 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     function validate(eData) {
-        //Define the elements we want to check
+        // Define the elements that may need to be checked
         var getGroup = getEle("groups");
         var getFname = getEle("fname");
         var getLname = getEle("lname");
         var getEmail = getEle("email");
         
-        // Get Error Messages
-        var messageAry = [];
+        //Reset error messages
+        errMsg.innerHTML = "";
+        getGroup.style.border = "1px solid black";
+        getFname.style.border = "1px solid black";
+        getLname.style.border = "1px solid black";
+        getEmail.style.border = "1px solid black";
+        
+        //Get Error Messages
+        var messageAry = [ ];
         //Group Validation
-        if(getGroup.value === "--Choose one Selection--") {
-            var groupError = "Please choose a group";
+        if(getGroup.value ==="--Choose One Selection--") {
+            var groupError = "Please make a selection";
             getGroup.style.border = "1px solid red";
             messageAry.push(groupError);
         }
         
-        //First Name Validation
-        if(getFname.value == "") {
+        //First name validation
+        if(getFname.value ==="") {
             var fnameError = "Please enter a first name";
             getFname.style.border = "1px solid red";
             messageAry.push(fnameError);
         }
-        
-        //Last Name Validation
-        if(getLname.value === "") {
+        //Last name validation
+        if(getLname.value ==="") {
             var lnameError = "Please enter a last name";
             getLname.style.border = "1px solid red";
-            messageAry.push(groupError);
+            messageAry.push(lnameError);
         }
-        
-        //Email Validation
+        //Email validation
         var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!(re.exec(getEmail.value))) {
-            var emailError = "Please enter a valid email Address";
+            var emailError = "Please enter a valid email address";
             getEmail.style.border = "1px solid red";
             messageAry.push(emailError);
         }
         
-        //If errors are on the screen, this will display them on the screen
+        //For errors they will be displayed on screen via this conditional
         if(messageAry.length >= 1) {
-            for(var i=0; j= messageAry.length; i++) {
+            for(var i=0, j=messageAry.length; i < j; i++) {
                 var txt = createEle("li");
                 txt.innerHTML = messageAry[i];
                 errMsg.appendChild(txt);
             }
-            
+            eData.preventDefault();
+            return false;
+        }else{
+            //if all data is good, this will save the data
+            //Send the key value (which came from the editData function)
+            //This key value is passed through the editSubmit even listener as a property
+            storeData(this.key);
         }
-       eData.preventDefault();
-       return false;
+        
     }
-        
-        
  
     
     
