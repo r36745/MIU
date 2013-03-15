@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Steven Roseman -->
+<!-- MIU -->
+<!-- Term 1303 -->
+<!-- Project 1 --> 
+    
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Wedding Guest List." />
+        <meta name="keywords" content="wedding, marriage, couples" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="user-scalable=no, width=device-width" />
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <title>Wedding Guest list</title>
+    </head>
+    <body>
+       <header>
+        <h1 id="titlePage">Wedding Guest List</h1>
+       </header>
+       <span>*fields are required</span>
+       <form action= "#" method="post" id="wedGstList">
+            <fieldset id="wedGstFieldset">
+                <legend>Guest Information</legend>
+                <ul id="errors"></ul>
+                <ul>
+                    <li id="wedGrp"><label for="group">*Wedding Guest type:</label></li>
+                    <li><label for="fname">*First Name:</label><input type="text" id="fname"/></li>
+                    <li><label for="lname">*Last Name:</label><input type="text" id="lname"/></li>
+                    <li><label for="email">*Email:</label><input type="text" id="email" placeholder="example@wedding.com"/></li>
+                    <li>What's your interest in dancing to the Wobble:<input id="slider" type="range" min="1" max="10" /> </li>
+                    <li id="choose">*Dinner Options:</li>
+                    <ul>
+                        <li><input type="radio" value="Shrimp Alfredo" id="shrimp alfredo" name="dinnerOpt" /><label for="shrimp alfredo">Shrimp Alfredo</label></li>
+                        <li><input type="radio" value="Baked Chicken" id="baked chicken" name="dinnerOpt" /><label for="baked chicken">Baked Chicken</label></li>
+                        <li><input type="radio" value="Veggie Platter" id="veggie platter" name="dinnerOpt" /><label for="veggie platter">Veggie Platter</label></li>
+                    </ul>
+                    <li><input type="checkbox"  value="Yes" id="wedPic" /><label for="pic">Would you be interested in taking a picture for wedding couples collage?</label></li>
+                    <li>RSVP Date <input type="date" id="date" /> </li>
+                    <li><label for="comments">Comments:<br /></label><textarea id="comments"></textarea></li>
+                </ul>
+            </fieldset>
+                <input type="submit" value="Wedding RSVP:" id="submit" /><br />  
+       </form>
+       <footer>
+            <nav>
+                 <a href="#" id="clearData">Clear Stored Data</a>
+                 <a href="#" id="displayData">Display Data</a>
+                <a href="additem.html" id="newItem" style="display:none;">New Item</a>
+            </nav>
+        </footer>
+       <script type="text/javascript" src="json/json.js"></script>
+       <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
