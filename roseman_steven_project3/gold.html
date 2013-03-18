@@ -1,0 +1,231 @@
+<!doctype html>
+<!-- Wedding Guest List -->
+<!-- Steven Roseman -->
+<!-- Term 1303 -->
+<!-- Project 2 -->
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="description" content="Wedding Guest List." />
+        <meta name="keywords" content="wedding, marriage, couples" />
+        <meta name="robots" content="index, follow" />
+	<title>Wedding Guest List</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link href="style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+    
+    
+    <div data-role="page" id="home">
+        
+        <div data-role="header" data-position="fixed" data-theme="">
+            <h1>Guest Home</h1>
+        </div>
+        
+        <div data-role="content">
+            <p><a href="additem.html"><img src="images/cta.png" title="Wed Logo"/></a></p>
+        
+            
+            <ul data-role="listview" data-filter="true">
+                <li><h2>Browse</h2></li>
+                <li>
+                    <a href="#aboutUs2">
+                    <img src="images/wedGst.jpg"/>
+                    <h3>First Name</h3>
+                    <p>Given Name, Please!</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#aboutUs2">
+                    <img src="images/wedGst2.jpg"/>
+                    <h3>Last Name</h3>
+                    <p>Surname, Please!</p>
+                    </a>
+                    
+                </li>
+                <li>
+                    <a href="#aboutUs2">
+                    <img src="images/wed4.jpg"/>
+                    <h3>Fun Photo</h3>
+                    <p>Help make this a special day!</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#aboutUs">
+                    <img src="images/wedDance2.jpg"/>
+                    <h3>Dance Interest</h3>
+                    <p>Get on the floor and shake your groove thing</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#aboutUs">
+                    <img src="images/wed3.jpg"/>
+                    <h3>Dinner Choices</h3>
+                    <p>Exquisite!</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div data-role="footer" data-position="fixed" data-id="wedding">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                    <li><a href="#aboutUs2" data-icon="info">About Us</a></li>
+                    <li><a href="#news" data-icon="star">News</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div data-role="page" id="aboutUs2" data-add-back-btn="true" data-ajax="false">
+        
+        <div data-role="header" data-position="fixed">
+            <h1>About Us</h1>
+            
+        </div>
+        
+        <div data-role="content">
+            <p><a href="additem"><img src="images/cta.png" title="Wed Logo"/></a></p>
+            
+            <ul data-role="listview" data-filter="true"></ul>
+        
+            <div  data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>Company Info</h3>
+                <p> We know that you expect your wedding day to be one of the most spectacular events of your life.
+                It's our job to make the tedius functions go away...in a snap! With our Wedding guest list, we allow you to confirm dinner options,
+                give allergy info and any little things you would like of your guests.
+                Trust us to your wedding essentials items</p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Bronze App</h3>
+                <p><a href="index.html">Gold App</a></p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>My Repo</h3>
+                <p>links here</p>
+                <p>lnks here</p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Mission Statement</h3>
+                    <p>Roseman Wedding Necesity's was established in 2013, set to prepare any couple with the proper way to make sure
+                    all the small things are covered. The passion for this service, comes from the couple having a horrendous experience where
+                    patrons had to receive medical attention, from food allergies. Our goal is to make sure that your wedding day necessities
+                    are covered and nothing is left to chance.</p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Credits</h3>
+                    <p>Free stock photo - www.sxc.hu</p>
+                    <p>Pelzer Wedding - Pictures by Roseman</p>
+                </div>
+            </div>   
+        </div>
+        
+        <div data-role="footer" data-position="fixed" data-id="wedding">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#aboutUs2" class="ui-btn-active ui-state-persist" data-icon="info">About Us</a></li>
+                    <li><a href="#news" data-icon="star">News</a></li>
+                </ul>
+            </div>
+        
+        </div>
+           
+    </div>
+    
+    
+    <div data-role="page" id="news" data-add-back-btn="true">
+        
+        <div data-role="header" data-position="fixed">
+            <h1>News</h1>
+        </div>    
+          <div data-role="content">
+             <p><a href="additem.html"><img src="images/cta.png" title="Wed Logo"/></a></p>
+                
+                <ul data-role="listview" data-filter="true">
+                    <li><h2>Wedding Schedule</h2></li>
+            
+                    <li><p>Wedding Ceremony: 6:45</p></li>
+                    <li><p>Wedding Pictures: 7:45</p></li>
+                    <li><p>Intro of Couple:  8:15</p></li>
+                    <li><p>Dinner:           8:30</p></li>
+                    <li><p>Music & Drinks:   9:15-till</p></li>
+            </ul>
+           
+          </div> 
+                <div data-role="footer" data-position="fixed" data-id="wedding">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#home" data-icon="home">Home</a></li>
+                            <li><a href="#aboutUs2" data-icon="info">About Us</a></li>
+                            <li><a href="#news" class="ui-btn-active ui-state-persist" data-icon="star" >News </a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            
+        
+    </div>
+    
+    <div data-role="page" data-role="collapsible-set" id="coInfo" data-add-back-btn="true" data-ajax="false">
+        
+        <div data-role="header" data-position="fixed">
+            <h1>Company Info</h1>
+        </div>    
+          <div data-role="content">
+            <p><a href="additem.html"><img src="images/cta.png" title="Wed Logo"/></a></p>
+            <div data-role="collapsible">
+                <h3>Info</h3>
+            <p> We know that you expect your wedding day to be one of the most spectacular events of your life.
+            It's our job to make the tedius functions go away...in a snap! With our Wedding guest list, we allow you to confirm dinner options,
+            give allergy info and any little things you would like of your guests.
+            Trust us to your wedding essentials items</p>
+          </div> 
+                <div data-role="footer" data-position="fixed" data-id="wedding">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#home" data-icon="home">Home</a></li>
+                            <li><a href="#aboutUs2" data-icon="info">About Us</a></li>
+                            <li><a href="#news" data-icon="star" >News </a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+
+	<!-- JavaScript under here -->
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
