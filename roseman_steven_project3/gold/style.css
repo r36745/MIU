@@ -2,18 +2,31 @@
  Steven Roseman
  MIU
  Term 1303
- Project 1
+ Project 3
  */
 
 
-
+p{
+    font-size: 12px;
+    float: inherit;
+}
+img{
+    
+    
+    
+}
 
 h1{
     color: #aa7f7f;
 }
 
-
+h2{
+    text-align: center;
+    
+}
 
 #thumbNails .ui-grid-b div{text-align: center;}
 
 #thumbNails .ui-grid-b .ui-bar{padding: 20px 10px;}
+
+label.error{display: block; margin: 10px 0; color: red;}
