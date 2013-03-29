@@ -35,7 +35,8 @@
     <div data-role="page" id="home">
         
         <div data-role="header" data-position="fixed" data-theme="">
-            <h1>Guest Home</h1>
+	    
+            <a href="#home"><img src="images/logo.png"/></a><h1> Guest Home</h1>
         </div>
         
         <div data-role="content">
@@ -112,7 +113,7 @@
     <div data-role="page" id="aboutUs2" data-add-back-btn="true" data-ajax="false">
         
         <div data-role="header" data-position="fixed">
-            <h1>About Us</h1>
+            <a href="#home"><img src="images/logo.png"/></a><h1>About Us</h1>
             
         </div>
         
@@ -121,7 +122,7 @@
             
             <ul data-role="listview" data-filter="true"></ul>
         
-            <div  data-role="collapsible-set">
+            <div  data-role="collapsible-set" data-theme="b" data-content-theme="b">
                 <div data-role="collapsible">
                     <h3>Company Info</h3>
                 <p> We know that you expect your wedding day to be one of the most spectacular events of your life.
@@ -175,7 +176,7 @@
     <div data-role="page" id="news" data-add-back-btn="true">
         
         <div data-role="header" data-position="fixed">
-            <h1>News</h1>
+            <a href="#home"><img src="images/logo.png"/></a><h1>News</h1>
         </div>    
           <div data-role="content">
              <p><a href="#home"><img src="images/cta.png" title="Wed Logo"/></a></p>
@@ -210,7 +211,7 @@
     
     <div data-role="page" id="addWed" data-add-back-btn="true">
 	<div data-role="header" data-position="fixed">
-	    <h1>Wedding Check-in</h1>
+	    <a href="#home"><img src="images/logo.png"/></a><h1>Wedding Check-in</h1>
 	</div>
 	<p><a href="#home"><img src="images/cta.png" title="Wed Logo"/></a></p>
 	<div data-role="content">
@@ -218,7 +219,7 @@
 	    <form action="" id="wedForm">		
 		<div data-role="fieldcontain">
 		    <label for="choose">Wedding Guest Type*</label>
-		    <select name="choose" id="wedGrp" data-native-menu="false" class="required" >
+		    <select name="choose" id="wedGrp" data-native-menu="false" class="required" data-theme="a" data-content-theme="a">
 			<option data-placeholder="true">Please Select One</option>
 			<optgroup label="Wedding Guest Type" >
 			    <option value="family">Family</option>
@@ -229,14 +230,17 @@
 		</div>
 		<div data-role="fieldcontain">
 		    <label for="fname">First Name*</label>
+		    <p>Enter your first name</p>
 		    <input type="text" name="fname" id="fname" class="required"/>	
 		</div>
 		<div>
 		    <label for="lname">Last Name*</label>
+		    <p>Enter your last name</p>
 		    <input type="text" name="lname" id="lname" class="required"/>	
 		</div>
 		<div data-role="fieldcontain">
 		    <label for="email">Email*</label>
+		    <p>Provide your email address</p>
 		    <input type="text" placeholder="example@wedding.com" name="email" id="email" class="required email"/>	
 		</div>
 		
@@ -248,15 +252,15 @@
 			<option value="on">Yes</option>
 		    </select>
 		</div>
-		<div data-role="fieldcontain">
+		<div data-role="fieldcontain" >
 		    <fieldset data-role="controlgroup">
 			<legend>Dinner Choice*</legend>
 			<p>please make one choice</p>
-			<input type="radio" value="Shrimp Alfredo" name="dinOpt" id="dinOpt1" class="required"/>
+			<input type="radio" value="Shrimp Alfredo" name="dinOpt" id="dinOpt1" class="required" data-theme="a" data-content-theme="a"/>
 			<label for="dinOpt1">Shrimp Alfredo</label>
-			<input type="radio" value="Bacon Wrapped Scallops" name="dinOpt" id="dinOpt2"/>
+			<input type="radio" value="Bacon Wrapped Scallops" name="dinOpt" id="dinOpt2" data-theme="a" data-content-theme="a"/>
 			<label for="dinOpt2">Bacon Wrapped Scallops</label>
-			<input type="radio" value="Veggie Platter" name="dinOpt" id="dinOpt3"/>
+			<input type="radio" value="Veggie Platter" name="dinOpt" id="dinOpt3" data-theme="a" data-content-theme="a"/>
 			<label for="dinOpt3">Veggie Platter</label>
 			
 		    </fieldset>
@@ -266,7 +270,7 @@
 			<legend>Take a Pic</legend>
 			
 			
-			<input type="checkbox" checked value="Yes" name="funPic" id="funPic1"/>
+			<input type="checkbox" checked value="Yes" name="funPic" id="funPic1" data-theme="a" data-content-theme="a"/>
 			<label for="funPic1">Take a PhotoBooth Pic!</label>
 			<p>Make sure to visit the wedding photobooth</p>
 		    </fieldset>
@@ -303,7 +307,7 @@
     <div data-role="page" id="thumbNails" data-add-back-btn="true">
 	
 	<div data-role="header" data-position="fixed">
-	    <h1>Wedding Pictures</h1>
+	    <a href="#home"><img src="images/logo.png"/></a><h1>Wedding Pictures</h1>
 	    
 	</div>
 	<p><a href="#home"><img src="images/cta.png" title="Wed Logo"/></a></p>
